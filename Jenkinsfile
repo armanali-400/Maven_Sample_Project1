@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('build') {
             steps {
@@ -8,10 +7,11 @@ pipeline {
                 echo 'build process initiated'
             }
             stage('execute') {
-            steps {
+                steps {
                 bat 'java -jar demo.jar'
                 echo 'execution done'
+                }
             }
-        }
+        } 
     }
 }
