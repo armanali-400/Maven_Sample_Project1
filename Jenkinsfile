@@ -1,17 +1,17 @@
 pipeline {
     agent any
+
     stages {
         stage('build') {
             steps {
                 bat 'mvn compile'
-                echo 'build process initiated'
+                echo 'Initiating compilation'
             }
-            stage('execute') {
-                steps {
-                bat 'java -jar demo.jar'
-                echo 'execution done'
-                }
+        }
+        stage('execution') {
+            steps {
+                bat 'java -jar demo.java'
             }
-        } 
+        }
     }
 }
