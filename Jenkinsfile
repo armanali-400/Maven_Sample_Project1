@@ -7,16 +7,10 @@ pipeline {
                 bat 'mvn compile'
                 echo 'build process initiated'
             }
-            
-            stage('test') {
+            stage('execute') {
             steps {
-                bat 'mvn test'
-                echo 'Test process initiated'
-            }
-            stage('deploy') {
-            steps {
-                bat 'mvn deploy'
-                echo 'deploy process initiated'
+                bat 'java -jar demo.jar'
+                echo 'execution done'
             }
         }
     }
